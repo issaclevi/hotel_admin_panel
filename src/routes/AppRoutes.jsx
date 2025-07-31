@@ -34,9 +34,9 @@ const AppRoutes = () => (
                 {/* Protected Routes */}
                 <Route element={<ProtectedRoute />}>
                     <Route element={<Layout />}>
-                        <Route path="/" element={<Dashboard />} />
+                        {/* <Route path="/" element={<Dashboard />} /> */}
                         <Route path="/booking" element={<Bookings />} />
-                        <Route path="/room" element={<Rooms />} />
+                        <Route path="/" element={<Rooms />} />
                         <Route path="/users" element={<UserManagement />} />
                         <Route path="/spacetype" element={<SpaceType />} />
                         <Route path="/coupons" element={<Coupons />} />

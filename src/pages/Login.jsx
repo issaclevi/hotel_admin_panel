@@ -23,9 +23,18 @@ const Login = () => {
     login(
       { email, password },
       {
-        onSuccess: () => {
+        // onSuccess: (data) => {
+        //   toast.success("Login successful!");
+        //   navigate("/");
+        onSuccess: (data) => {
+        if (data.userData?.role === 'hotel') {
           toast.success("Login successful!");
           navigate("/");
+        } else {
+          toast.error("Access restricted to hotel users only");
+          // Immediately log out if not a hotel user
+          logout();
+        }
         },
         onError: (error) => {
           toast.error(error.response?.data?.message || "Login failed. Please check credentials.");

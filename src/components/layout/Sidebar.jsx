@@ -88,7 +88,7 @@ const Sidebar = ({ className }) => {
           <div className="flex h-7 w-7 items-center justify-center rounded-md">
             <img src={logo} alt="Logo" className="h-8 w-10" />
           </div>
-          {!isCollapsed && <span className="font-semibold">Wayzx</span>}
+          {!isCollapsed && <span className="font-semibold">Hotel</span>}
         </div>
         <Button
           variant="ghost"
@@ -116,20 +116,20 @@ const Sidebar = ({ className }) => {
           "h-[calc(100vh-4rem)]" // Adjust if you have a header/navbar
         )}
       >
-        <NavGroup title="Overview" isCollapsed={isCollapsed}>
+        {/* <NavGroup title="Overview" isCollapsed={isCollapsed}>
           <NavItem to="/" icon={LayoutDashboard} label="Dashboard" isCollapsed={isCollapsed} />
-        </NavGroup>
+        </NavGroup> */}
 
-        <NavGroup title="Management" isCollapsed={isCollapsed}>
-          <NavItem to="/users" icon={Users} label="Users & Customers" isCollapsed={isCollapsed} />
-          <NavItem to="/room" icon={Building} label="Rooms" isCollapsed={isCollapsed} />
+        <NavGroup >
+          {/* <NavItem to="/users" icon={Users} label="Users & Customers" isCollapsed={isCollapsed} /> */}
+          <NavItem to="/" icon={Building} label="Rooms" isCollapsed={isCollapsed} />
           <NavItem to="/booking" icon={Calendar} label="Bookings" isCollapsed={isCollapsed} />
-          <NavItem to="/spacetype" icon={Building} label="Space Type" isCollapsed={isCollapsed} />
+          {/* <NavItem to="/spacetype" icon={Building} label="Space Type" isCollapsed={isCollapsed} />
           <NavItem to="/coupons" icon={BadgePercent} label="Coupons" isCollapsed={isCollapsed} />
-          <NavItem to="/reward" icon={Gift} label="Reward System" isCollapsed={isCollapsed} />
+          <NavItem to="/reward" icon={Gift} label="Reward System" isCollapsed={isCollapsed} /> */}
         </NavGroup>
 
-        {!isCollapsed && <Separator className="my-2" />}
+        {/* {!isCollapsed && <Separator className="my-2" />} */}
 
         {/* <NavGroup title="System" isCollapsed={isCollapsed}>
           <NavItem to="/settings" icon={Settings} label="Settings" isCollapsed={isCollapsed} />

@@ -29,8 +29,10 @@ export const AuthProvider = ({ children }) => {
 
       if (accessToken && userData) {
         // await validateToken();
+         const parsedUser = JSON.parse(userData);
+      setUser(parsedUser);
 
-        setUser(JSON.parse(userData));
+        // setUser(JSON.parse(userData));
       } else {
         const refreshToken = sessionStorage.getItem('accessToken');
 

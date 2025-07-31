@@ -3,6 +3,8 @@ import { jwtDecode } from 'jwt-decode';
 
 export const authLogin = async (credentials) => {
   const response = await api.post('/auth/login', credentials);
+  console.log(response);
+  
 
   return {
     userData: response.data.data,

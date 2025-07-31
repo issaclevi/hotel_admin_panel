@@ -11,9 +11,14 @@ export const useLoginStore = () => {
   return useMutation({
     mutationFn: authLogin,
     onSuccess: (data) => {
-      const accessToken = data?.accessToken;
-      const refreshToken = data?.refreshToken;
-      const userData = data?.userData;
+      // const accessToken = data?.accessToken;
+      // const refreshToken = data?.refreshToken;
+      // const userData = data?.userData;
+      const { accessToken, refreshToken, userData } = data;
+       if (userData?.role !== 'hotel') {
+        logout();
+        throw new Error('Access restricted to hotel users only');
+      }
 
       Cookies.set('accessToken', accessToken, {
         expires: 1,
