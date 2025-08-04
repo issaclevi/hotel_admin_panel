@@ -72,7 +72,7 @@ const Rooms = () => {
             name: '',
             description: '',
             location: '',
-            pricePerHour: '',
+            pricePerSlot: '',
             spaceTypeId: '',
             capacity: '',
             currency: currencyOptions[0],
@@ -100,7 +100,7 @@ const Rooms = () => {
             name: '',
             description: '',
             location: '',
-            pricePerHour: '',
+            pricePerSlot: '',
             spaceTypeId: '',
             capacity: '',
             currency: currencyOptions[0],
@@ -126,7 +126,7 @@ const Rooms = () => {
             name: room.name,
             description: room.description,
             location: room.location,
-            pricePerHour: room.pricePerHour,
+            pricePerSlot: room.pricePerSlot,
             capacity: room.capacity,
             spaceTypeId: room.spaceType?._id || '',
             currency: room.currency,
@@ -193,8 +193,8 @@ const Rooms = () => {
 
             console.log('Room Data:', data);
 
-            const pricePerHour = Number(data.pricePerHour);
-            if (isNaN(pricePerHour)) {
+            const pricePerSlot = Number(data.pricePerSlot);
+            if (isNaN(pricePerSlot)) {
                 toast({
                     title: 'Validation Error',
                     description: 'Price per hour must be a valid number',
@@ -207,7 +207,7 @@ const Rooms = () => {
                 name: data.name.trim(),
                 description: data.description.trim(),
                 location: data.location.trim(),
-                pricePerHour: pricePerHour,
+                pricePerSlot: pricePerSlot,
                 capacity: data.capacity,
                 roomSize: data.roomSize,
                 currency: data.currency,
@@ -306,11 +306,11 @@ const Rooms = () => {
         { header: 'Location', accessor: 'location' },
         {
             header: 'Price Per Hour',
-            accessor: 'pricePerHour',
+            accessor: 'pricePerSlot',
             cell: (row) => (
                 <span>
                     {row?.currency?.symbol || '₹'}
-                    {row?.pricePerHour}
+                    {row?.pricePerSlot}
                 </span>
             ),
         },
@@ -439,7 +439,7 @@ const Rooms = () => {
 
                                 <FormField
                                     control={form.control}
-                                    name="pricePerHour"
+                                    name="pricePerSlot"
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormLabel>Price Per Hour *</FormLabel>
@@ -879,7 +879,7 @@ const Rooms = () => {
                                         <Label className="font-bold">Price Per Hour</Label>
                                         <p>
                                             {selectedRoom.currency?.symbol || '₹'}
-                                            {selectedRoom.pricePerHour}
+                                            {selectedRoom.pricePerSlot}
                                         </p>
                                     </div>
                                     <div>

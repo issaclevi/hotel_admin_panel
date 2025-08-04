@@ -1,11 +1,11 @@
 import api from './api';
 
 export const createRoom = async (roomData) => {
-    return await api.post('/room/room-create', roomData);
+    return await api.post('/hotel/hotel-create', roomData);
 };
 
 export const getAllRooms = async () => {
-    const res = await api.get('/room/getAllRooms');
+    const res = await api.get('/hotel/getAllRooms');
     return res.data;
 };
 
